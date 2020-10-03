@@ -1,3 +1,37 @@
+header {
+  background-color: #bea36c;
+  border-bottom: 1px solid #0e0800;
+  padding: 0 0 0 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav {
+  padding: 0 1rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+header ul li a {
+  text-decoration: none;
+}
+
 html,
 body {
   width: 100%;
@@ -10,5 +44,9 @@ body {
   background-color: #f0e6cb;
   color: #0e0800;
   font-family: sans-serif;
+}
+
+a {
+  color: #0a74ae;
 }
 
