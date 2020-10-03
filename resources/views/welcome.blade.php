@@ -1,5 +1,5 @@
 @extends('layouts.layout')
 
 @section('content')
-    <p>Welcome to the archive!</p>
+    <h2>Welcome to the archive!</h2>
 @endsection
