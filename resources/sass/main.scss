@@ -1,9 +1,9 @@
-$background: #f0e6cb;
-$descblock: #fcf9f1;
-$text: #0e0800;
-$header-footer: #bea36c;
-$link: #0a74ae;
-$header-link: #1f334b;
+@import 'variables';
+
+@import 'components/header';
+@import 'components/footer';
+
+@import 'components/form';
 
 html, body {
     width: 100%;
@@ -16,4 +16,16 @@ body {
     background-color: $background;
     color: $text;
     font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+main {
+    flex-grow: 1;
+    padding: 1rem;
+}
+
+a {
+  color: $link;
 }
