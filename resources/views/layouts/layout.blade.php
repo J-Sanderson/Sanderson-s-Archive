@@ -14,9 +14,9 @@
             <h1>Sanderson's Archive</h1>
             <nav>
             <ul>
-                <li><a href="#">Home</a> ~</li>
-                <li><a href="#">Users</a> ~</li>
-                <li><a href="#">Latest</a></li>
+                <li><a href="/">Home</a> ~</li>
+                <li><a href="/users">Users</a> ~</li>
+                <li><a href="/latest">Latest</a></li>
             </ul>
             @guest
                     <li class="nav-item">
