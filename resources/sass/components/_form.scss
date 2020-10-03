@@ -1,0 +1,9 @@
+.form {
+    > * {
+        display: block;
+        margin: 1rem 0;
+    }
+    label span {
+        display: block;
+    }
+}
