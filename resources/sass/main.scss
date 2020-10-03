@@ -1,6 +1,7 @@
 @import 'variables';
 
 @import 'components/header';
+@import 'components/footer';
 
 html, body {
     width: 100%;
@@ -13,6 +14,14 @@ body {
     background-color: $background;
     color: $text;
     font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+main {
+    flex-grow: 1;
+    padding: 1rem;
 }
 
 a {
