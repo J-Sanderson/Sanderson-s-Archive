@@ -4,6 +4,8 @@
 @import 'components/footer';
 
 @import 'components/form';
+@import 'components/intro';
+@import 'components/imagelist';
 
 // https://codepen.io/jsanderson/pen/MLVEXY?editors=0100
 
@@ -26,6 +28,9 @@ body {
 main {
     flex-grow: 1;
     padding: 1rem;
+    width: 80%;
+    max-width: 1000px;
+    margin: auto;
 }
 
 a {

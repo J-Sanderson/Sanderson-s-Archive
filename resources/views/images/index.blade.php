@@ -1,10 +1,23 @@
 @extends('layouts.layout')
 
 @section('content')
-    <h2>Latest images</h2>
+    <div class="intro">
+        <h2>Latest images</h2>
+    </div>
 
-    @foreach($images as $image)
-        <img src="{{ asset('/storage/'.$image->url) }}">
-    @endforeach
+    <div class="image-list">
+        @foreach($images as $image)
+            <div class="image-container">
+                <div class="thumb-container">
+                    <a href="{{ asset('/storage/'.$image->url) }}">
+                        <img src="{{ asset('/storage/'.$image->url) }}">
+                    </a>
+                </div>
+                <div class="description">
+                    <p>A description will go here</p>
+                </div>
+            </div>
+        @endforeach
+    </div>
     
 @endsection
