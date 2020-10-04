@@ -100,8 +100,12 @@ class ImageController extends Controller
      * @param  \App\Models\Image  $image
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Image $image)
+    public function destroy($id)
     {
-        //
+        // TODO ensure this image belongs to the user
+        $image = Image::findOrFail($id);
+        $image->delete();
+
+        return redirect('/users/'.Auth::id());
     }
 }

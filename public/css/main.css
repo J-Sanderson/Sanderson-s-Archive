@@ -49,6 +49,47 @@ footer {
   display: block;
 }
 
+.intro {
+  text-align: center;
+  background-color: #fcf9f1;
+  border: 1px solid #0e0800;
+  margin: 1rem auto;
+}
+
+.image-list {
+  width: 100%;
+}
+
+.image-list .image-container {
+  border: 1px solid #0e0800;
+  background-color: #fcf9f1;
+  display: flex;
+  align-items: stretch;
+  margin: 1rem auto;
+}
+
+.image-list .image-container .thumb-container {
+  border-right: 1px solid #0e0800;
+}
+
+.image-list .image-container .thumb-container img {
+  max-height: 200px;
+}
+
+.image-list .image-container .description {
+  width: 100%;
+  padding: 0 1rem;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.image-list .image-container .description .delete {
+  margin-bottom: 1rem;
+  float: right;
+}
+
 html,
 body {
   width: 100%;
@@ -69,6 +110,9 @@ body {
 main {
   flex-grow: 1;
   padding: 1rem;
+  width: 80%;
+  max-width: 1000px;
+  margin: auto;
 }
 
 a {
