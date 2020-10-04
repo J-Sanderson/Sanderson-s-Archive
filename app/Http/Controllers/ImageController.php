@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 class ImageController extends Controller
 {
@@ -49,7 +50,7 @@ class ImageController extends Controller
 
         $image = new Image;
         $image->url = $url;
-        $image->user_id = 1; // TODO get id of uploader
+        $image->user_id = Auth::id();
 
         $image->save();
 
