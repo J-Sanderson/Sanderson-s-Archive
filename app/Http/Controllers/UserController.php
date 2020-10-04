@@ -21,8 +21,11 @@ class UserController extends Controller
 
         $user = User::findOrFail($id);
 
+        $images = $user->images()->latest()->get();
+
         return view('users.show', [
-            'user' => $user
+            'user' => $user,
+            'images' => $images
         ]);
     }
 }
