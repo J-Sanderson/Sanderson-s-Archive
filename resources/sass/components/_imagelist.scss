@@ -1,0 +1,22 @@
+.image-list{
+    width: 100%;
+    .image-container {
+        border: 1px solid $text;
+        background-color: $descblock;
+        display: flex;
+        align-items: flex-start;
+        margin: 1rem auto;
+        .thumb-container {
+            height: 200px;
+            border-right: 1px solid $text;
+            img {
+                // TODO use proper thumbnail images
+                max-height: 200px;
+            }
+        }
+        .description {
+            padding: 0 1rem;
+            font-size: 0.9rem;
+        }
+    }
+}

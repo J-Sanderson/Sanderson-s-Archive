@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ImageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,10 @@ Route::get('/', function () {
 
 Route::get('/users', [UserController::class, 'index']);
 Route::get('/users/{id}', [UserController::class, 'show']);
+
+Route::get('/latest', [ImageController::class, 'index']);
+Route::get('upload', [ImageController::class, 'create'])->middleware('auth');
+Route::post('upload', [ImageController::class, 'store'])->middleware('auth');
 
 Auth::routes();
 
