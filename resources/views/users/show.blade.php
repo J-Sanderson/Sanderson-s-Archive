@@ -14,6 +14,13 @@
                 </div>
                 <div class="description">
                     <p>{{ $image->desc }}</p>
+                    @if($user->id == Auth::user()->id)
+                        <form method="post", action="/images/{{ $image->id }}">
+                            @csrf
+                            @method('DELETE')
+                            <button class="delete">Delete</button>
+                        </form>
+                    @endif
                 </div>
             </div>
         @endforeach
