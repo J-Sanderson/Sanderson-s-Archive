@@ -31,7 +31,7 @@
         {{ __('Remember Me') }}
     </label>
 
-    <button type="submit" class="btn btn-primary">
+    <button type="submit">
         {{ __('Login') }}
     </button>
 

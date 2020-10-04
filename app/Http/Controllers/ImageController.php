@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Image;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ImageController extends Controller
 {
@@ -24,7 +25,7 @@ class ImageController extends Controller
      */
     public function create()
     {
-        //
+        return view('images.create');
     }
 
     /**
@@ -35,7 +36,16 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // TODO validate all this
+
+        $path = $request->image->store('images');
+
+        $image = new Image;
+        $image->url = $path;
+        $image->user_id = 1; // TODO get id of uploader
+
+        return redirect('/home');
+
     }
 
     /**
