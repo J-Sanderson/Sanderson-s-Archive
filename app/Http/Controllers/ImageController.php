@@ -41,6 +41,7 @@ class ImageController extends Controller
     public function store(Request $request)
     {
         // TODO validate all this
+        // TODO allow multi-line descriptions
 
         $path = $request->image->store('public/images');
 
@@ -51,6 +52,7 @@ class ImageController extends Controller
         $image = new Image;
         $image->url = $url;
         $image->user_id = Auth::id();
+        $image->desc = $request->desc;
 
         $image->save();
 

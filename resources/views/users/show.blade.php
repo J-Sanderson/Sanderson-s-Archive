@@ -13,7 +13,7 @@
                     </a>
                 </div>
                 <div class="description">
-                    <p>A description will go here</p>
+                    <p>{{ $image->desc }}</p>
                 </div>
             </div>
         @endforeach
