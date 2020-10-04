@@ -15,7 +15,10 @@ class ImageController extends Controller
      */
     public function index()
     {
-        //
+        $images = Image::latest()->get();
+        return view('images.index', [
+            'images' => $images
+        ]);
     }
 
     /**
@@ -38,13 +41,19 @@ class ImageController extends Controller
     {
         // TODO validate all this
 
-        $path = $request->image->store('images');
+        $path = $request->image->store('public/images');
+
+        $url = explode('/', $path);
+        array_shift($url);
+        $url = implode('/', $url);
 
         $image = new Image;
-        $image->url = $path;
+        $image->url = $url;
         $image->user_id = 1; // TODO get id of uploader
 
-        return redirect('/home');
+        $image->save();
+
+        return redirect('/latest');
 
     }
 
