@@ -91,9 +91,14 @@ class ImageController extends Controller
      * @param  \App\Models\Image  $image
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Image $image)
+    public function update(Request $request, $id)
     {
-        //
+        $image = Image::findOrFail($id);
+        // TODO ensure this image belongs to the user
+
+        $image->desc = $request->desc; // TODO allow blank descriptions
+        $image->save();
+        return redirect('/users/'.Auth::id());
     }
 
     /**
