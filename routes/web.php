@@ -25,7 +25,8 @@ Route::get('/users/{id}', [UserController::class, 'show']);
 Route::get('/latest', [ImageController::class, 'index']);
 Route::get('upload', [ImageController::class, 'create'])->middleware('auth');
 Route::post('upload', [ImageController::class, 'store'])->middleware('auth');
-Route::delete('/images/{id}', [ImageController::class, 'destroy'])->middleware('auth');;
+Route::get('/images/edit/{id}', [ImageController::class, 'edit'])->middleware('auth');
+Route::delete('/images/{id}', [ImageController::class, 'destroy'])->middleware('auth');
 
 Auth::routes();
 

@@ -52,7 +52,7 @@ class ImageController extends Controller
         $image = new Image;
         $image->url = $url;
         $image->user_id = Auth::id();
-        $image->desc = $request->desc;
+        $image->desc = $request->desc; // TODO allow blank descriptions
 
         $image->save();
 
@@ -77,9 +77,11 @@ class ImageController extends Controller
      * @param  \App\Models\Image  $image
      * @return \Illuminate\Http\Response
      */
-    public function edit(Image $image)
+    public function edit($id)
     {
-        //
+        $image = Image::findOrFail($id);
+
+        return view('images.edit', ['image' => $image]);
     }
 
     /**
