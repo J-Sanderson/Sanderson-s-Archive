@@ -19,15 +19,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/users', [UserController::class, 'index']);
-Route::get('/users/{id}', [UserController::class, 'show']);
+Route::get('/users', [UserController::class, 'index'])->name('users.index');
+Route::get('/users/{id}', [UserController::class, 'show'])->name('users.show');
 
-Route::get('/latest', [ImageController::class, 'index']);
-Route::get('upload', [ImageController::class, 'create'])->middleware('auth');
-Route::post('upload', [ImageController::class, 'store'])->middleware('auth');
-Route::get('/images/edit/{id}', [ImageController::class, 'edit'])->middleware('auth');
-Route::put('/images/edit/{id}', [ImageController::class, 'update'])->middleware('auth');
-Route::delete('/images/{id}', [ImageController::class, 'destroy'])->middleware('auth');
+Route::get('/latest', [ImageController::class, 'index'])->name('images.index');
+Route::get('/images/upload', [ImageController::class, 'create'])->name('images.create')->middleware('auth');
+Route::post('/images/upload', [ImageController::class, 'store'])->name('images.store')->middleware('auth');
+Route::get('/images/edit/{id}', [ImageController::class, 'edit'])->name('images.edit')->middleware('auth');
+Route::put('/images/edit/{id}', [ImageController::class, 'update'])->name('images.update')->middleware('auth');
+Route::delete('/images/{id}', [ImageController::class, 'destroy'])->name('images.destroy')->middleware('auth');
 
 Auth::routes();
 
