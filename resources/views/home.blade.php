@@ -5,7 +5,8 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+
+                <h2>Welcome, {{ Auth::user()->name }}.</h2>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,7 +15,10 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    <p>
+                        <a href="{{ route('users.show', Auth::user()->id) }}">Your gallery</a>
+                    </p>
+                    <!-- TODO add user details, bio, name, email etc, update here -->
                 </div>
             </div>
         </div>

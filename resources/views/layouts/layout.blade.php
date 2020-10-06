@@ -15,8 +15,8 @@
             <nav>
             <ul>
                 <li><a href="/">Home</a></li>
-                <li>~ <a href="/users">Users</a></li>
-                <li>~ <a href="/latest">Latest</a></li>
+                <li>~ <a href="{{ route('users.index') }}">Users</a></li>
+                <li>~ <a href="{{ route('images.index') }}">Latest</a></li>
             </ul>
             @guest
                 <ul>
@@ -31,12 +31,12 @@
                     @else
                     <ul>
                         <li>
-                            <a href="/home">
+                            <a href="{{ route('home') }}">
                                 {{ Auth::user()->name }}
                             </a>
                         </li>
                         <li>
-                            ~ <a href="/upload">Upload</a>
+                            ~ <a href="{{ route('images.create') }}">Upload</a>
                         </li>
                         <li>
                             ~ <a href="{{ route('logout') }}" onclick="event.preventDefault();

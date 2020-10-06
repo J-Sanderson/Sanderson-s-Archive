@@ -56,7 +56,7 @@ class ImageController extends Controller
 
         $image->save();
 
-        return redirect('/latest');
+        return redirect(route('images.index'));
 
     }
 
@@ -98,7 +98,7 @@ class ImageController extends Controller
 
         $image->desc = $request->desc; // TODO allow blank descriptions
         $image->save();
-        return redirect('/users/'.Auth::id());
+        return redirect(route('users.show', Auth::id()));
     }
 
     /**
@@ -113,6 +113,6 @@ class ImageController extends Controller
         $image = Image::findOrFail($id);
         $image->delete();
 
-        return redirect('/users/'.Auth::id());
+        return redirect(route('users.show', Auth::id()));
     }
 }

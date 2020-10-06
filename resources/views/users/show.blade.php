@@ -15,7 +15,7 @@
                 <div class="description">
                     <p>{{ $image->desc }}</p>
                     @if($user->id == Auth::user()->id)
-                        <a class="edit" href="/images/edit/{{ $image->id }}">Edit</a>
+                        <a class="edit" href="{{ route('images.edit', $image->id) }}">Edit</a>
                     @endif
                 </div>
             </div>
