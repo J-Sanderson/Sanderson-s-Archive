@@ -52,7 +52,7 @@ class ImageController extends Controller
         $image = new Image;
         $image->url = $url;
         $image->user_id = Auth::id();
-        $image->desc = $request->desc; // TODO allow blank descriptions
+        $image->desc = $request->desc ?? '';
 
         $image->save();
 
@@ -100,7 +100,7 @@ class ImageController extends Controller
         $image = Image::findOrFail($id);
 
         if ($image['user_id'] === Auth::id()) {
-            $image->desc = $request->desc; // TODO allow blank descriptions
+            $image->desc = $request->desc ?? '';
             $image->save();
             return redirect(route('users.show', Auth::id()));
         } else {
