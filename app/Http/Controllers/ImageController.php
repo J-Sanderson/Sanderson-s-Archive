@@ -98,11 +98,15 @@ class ImageController extends Controller
     public function update(Request $request, $id)
     {
         $image = Image::findOrFail($id);
-        // TODO ensure this image belongs to the user
 
-        $image->desc = $request->desc; // TODO allow blank descriptions
-        $image->save();
-        return redirect(route('users.show', Auth::id()));
+        if ($image['id'] === Auth::id()) {
+            $image->desc = $request->desc; // TODO allow blank descriptions
+            $image->save();
+            return redirect(route('users.show', Auth::id()));
+        } else {
+            abort(403);
+        }
+        
     }
 
     /**
@@ -113,10 +117,14 @@ class ImageController extends Controller
      */
     public function destroy($id)
     {
-        // TODO ensure this image belongs to the user
         $image = Image::findOrFail($id);
-        $image->delete();
 
-        return redirect(route('users.show', Auth::id()));
+        if ($image['id'] === Auth::id()) {
+            $image->delete();
+            return redirect(route('users.show', Auth::id()));
+        } else {
+            abort(403);
+        }
+        
     }
 }
