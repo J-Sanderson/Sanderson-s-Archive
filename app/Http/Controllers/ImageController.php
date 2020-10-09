@@ -81,7 +81,7 @@ class ImageController extends Controller
     {
         $image = Image::findOrFail($id);
 
-        if ($image['id'] === Auth::id()) {
+        if ($image['user_id'] === Auth::id()) {
             return view('images.edit', ['image' => $image]);
         } else {
             abort(403);
@@ -99,7 +99,7 @@ class ImageController extends Controller
     {
         $image = Image::findOrFail($id);
 
-        if ($image['id'] === Auth::id()) {
+        if ($image['user_id'] === Auth::id()) {
             $image->desc = $request->desc; // TODO allow blank descriptions
             $image->save();
             return redirect(route('users.show', Auth::id()));
@@ -119,7 +119,7 @@ class ImageController extends Controller
     {
         $image = Image::findOrFail($id);
 
-        if ($image['id'] === Auth::id()) {
+        if ($image['user_id'] === Auth::id()) {
             $image->delete();
             return redirect(route('users.show', Auth::id()));
         } else {
