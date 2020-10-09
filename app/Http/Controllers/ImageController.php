@@ -81,7 +81,11 @@ class ImageController extends Controller
     {
         $image = Image::findOrFail($id);
 
-        return view('images.edit', ['image' => $image]);
+        if ($image['id'] === Auth::id()) {
+            return view('images.edit', ['image' => $image]);
+        } else {
+            abort(403);
+        }
     }
 
     /**
