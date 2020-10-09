@@ -19,6 +19,14 @@
                         <a href="{{ route('users.show', Auth::user()->id) }}">Your gallery</a>
                     </p>
                     <!-- TODO add user details, bio, name, email etc, update here -->
+                    <h2>Settings</h2>
+                    <form>
+                        <label for="show-email">
+                            <span>Show email on profile page</span>
+                            <input type="checkbox" name="show-email">
+                        </label>
+                        <button type="submit">Update</button>
+                    </form>
                 </div>
             </div>
         </div>
