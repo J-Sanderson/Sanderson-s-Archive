@@ -3,6 +3,7 @@
 @section('content')
     <div class="intro">
         <h2>{{ $user->name }}</h2>
+        <p><a href="mailto:{{ $user->email }}">{{ $user->email }}</a></p>
     </div>
     <div class="image-list">
         @foreach($images as $image)
