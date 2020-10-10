@@ -24,7 +24,11 @@
                         @csrf
                         <label for="show-email">
                             <span>Show email on profile page</span>
-                            <input type="checkbox" name="showEmail">
+                            <input type="checkbox" name="showEmail"
+                                @if(Auth::user()->showEmail)
+                                    checked
+                                @endif
+                            >
                         </label>
                         <button type="submit">Update</button>
                     </form>
