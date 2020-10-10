@@ -31,7 +31,7 @@
                             >
                         </label>
                         <label for="bio">Your bio (optional)</labeL>
-                        <textarea id="bio" name="bio"></textarea>
+                        <textarea id="bio" name="bio">{{ Auth::user()->bio }}</textarea>
                         <button type="submit">Update</button>
                     </form>
                 </div>
