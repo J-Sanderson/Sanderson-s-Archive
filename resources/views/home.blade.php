@@ -20,10 +20,11 @@
                     </p>
                     <!-- TODO add user details, bio, name, email etc, update here -->
                     <h2>Settings</h2>
-                    <form>
+                    <form method="POST" action="{{ route('users.update', Auth::user()->id )}}">
+                        @csrf
                         <label for="show-email">
                             <span>Show email on profile page</span>
-                            <input type="checkbox" name="show-email">
+                            <input type="checkbox" name="showEmail">
                         </label>
                         <button type="submit">Update</button>
                     </form>
