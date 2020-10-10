@@ -20,7 +20,7 @@
                     </p>
                     <!-- TODO add user details, bio, name, email etc, update here -->
                     <h2>Settings</h2>
-                    <form method="POST" action="{{ route('users.update', Auth::user()->id )}}">
+                    <form method="POST" action="{{ route('users.update', Auth::user()->id )}}" class="form">
                         @csrf
                         <label for="show-email">
                             <span>Show email on profile page</span>
@@ -30,6 +30,8 @@
                                 @endif
                             >
                         </label>
+                        <label for="bio">Your bio (optional)</labeL>
+                        <textarea id="bio" name="bio"></textarea>
                         <button type="submit">Update</button>
                     </form>
                 </div>
