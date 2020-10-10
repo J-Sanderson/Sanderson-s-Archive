@@ -3,6 +3,12 @@
 @section('content')
     <div class="intro">
         <h2>{{ $user->name }}</h2>
+        @if($user->showEmail)
+            <p><a href="mailto:{{ $user->email }}">{{ $user->email }}</a></p>
+        @endif
+        @if($user->bio)
+            <p>{{$user->bio}}</p>
+        @endif
     </div>
     <div class="image-list">
         @foreach($images as $image)

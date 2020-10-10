@@ -70,9 +70,15 @@ footer {
 
 .image-list .image-container .thumb-container {
   border-right: 1px solid #0e0800;
+  height: 200px;
 }
 
-.image-list .image-container .thumb-container img {
+.image-list .image-container .thumb-container a {
+  display: inline-block;
+  height: 200px;
+}
+
+.image-list .image-container .thumb-container a img {
   max-height: 200px;
 }
 
@@ -85,9 +91,8 @@ footer {
   justify-content: space-between;
 }
 
-.image-list .image-container .description .delete {
+.image-list .image-container .description .edit {
   margin-bottom: 1rem;
-  float: right;
 }
 
 html,
