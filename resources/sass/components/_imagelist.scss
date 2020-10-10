@@ -8,9 +8,14 @@
         margin: 1rem auto;
         .thumb-container {
             border-right: 1px solid $text;
-            img {
-                // TODO use proper thumbnail images
-                max-height: 200px;
+            height: 200px;
+            a {
+                display:inline-block;
+                height: 200px;
+                img {
+                    // TODO use proper thumbnail images
+                    max-height: 200px;
+                }
             }
         }
         .description {
