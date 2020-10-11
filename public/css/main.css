@@ -86,13 +86,6 @@ footer {
   width: 100%;
   padding: 0 1rem;
   font-size: 0.9rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.image-list .image-container .description .edit {
-  margin-bottom: 1rem;
 }
 
 html,
