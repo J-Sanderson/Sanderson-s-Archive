@@ -14,7 +14,15 @@
                     </a>
                 </div>
                 <div class="description">
+                    <p>
+                        <a href="{{ route('users.show', $image->user->id) }}">
+                            {{ $image->user->name }}
+                        </a>
+                    </p>
                     <p>{{ $image->desc }}</p>
+                    @if(!Auth::guest() && $image->user->id == Auth::user()->id)
+                        <a class="edit" href="{{ route('images.edit', $image->id) }}">Edit</a>
+                    @endif
                 </div>
             </div>
         @endforeach
