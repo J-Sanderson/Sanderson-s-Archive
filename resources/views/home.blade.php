@@ -18,8 +18,9 @@
                     <p>
                         <a href="{{ route('users.show', Auth::user()->id) }}">Your gallery</a>
                     </p>
-                    <!-- TODO add user details, bio, name, email etc, update here -->
+
                     <h2>Settings</h2>
+
                     <form method="POST" action="{{ route('users.update', Auth::user()->id )}}" class="form">
                         @csrf
                         <label for="show-email">
@@ -33,6 +34,13 @@
                         <label for="bio">Your bio (optional)</labeL>
                         <textarea id="bio" name="bio">{{ Auth::user()->bio }}</textarea>
                         <button type="submit">Update</button>
+                    </form>
+
+                    <h2>Delete your account</h2>
+                    <form method="POST" action="{{ route('users.destroy', Auth::user()->id )}}" class="form">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="delete">Delete</button>
                     </form>
                 </div>
             </div>
