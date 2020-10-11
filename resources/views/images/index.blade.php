@@ -14,6 +14,11 @@
                     </a>
                 </div>
                 <div class="description">
+                    <p>
+                        <a href="{{ route('users.show', $image->user->id) }}">
+                            {{ $image->user->name }}
+                        </a>
+                    </p>
                     <p>{{ $image->desc }}</p>
                 </div>
             </div>
