@@ -36,6 +36,7 @@
                         <button type="submit">Update</button>
                     </form>
 
+                    <!-- TODO add 'are you sure' confirmation -->
                     <h2>Delete your account</h2>
                     <form method="POST" action="{{ route('users.destroy', Auth::user()->id )}}" class="form">
                         @csrf

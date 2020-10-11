@@ -22,6 +22,7 @@ Route::get('/', function () {
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
 Route::get('/users/{id}', [UserController::class, 'show'])->name('users.show');
 Route::post('/users/{id}', [UserController::class, 'update'])->name('users.update');
+Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 
 Route::get('/latest', [ImageController::class, 'index'])->name('images.index');
 Route::get('/images/upload', [ImageController::class, 'create'])->name('images.create')->middleware('auth');
