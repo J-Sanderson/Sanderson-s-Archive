@@ -31,13 +31,28 @@ class UserController extends Controller
     }
 
     public function update(Request $request, $id) {
-
-        error_log($request->showEmail);
         
         $user = User::findOrFail($id);
         $user->showEmail = $request->showEmail === 'on';
         $user->bio = $request->bio;
         $user->save();
         return redirect(route('users.show', Auth::id()));
+    }
+
+    public function destroy($id) {
+
+        $user = User::findOrFail($id);
+
+        if ($user['id'] === Auth::id()) {
+            $images = $user->images;
+            foreach($images as $image) {
+                $image->delete();
+            }
+            $user->delete();
+            return redirect(route('users.index'));
+        } else {
+            abort(403);
+        }
+
     }
 }
