@@ -88,6 +88,19 @@ footer {
   font-size: 0.9rem;
 }
 
+.user-list {
+  background-color: #fcf9f1;
+  border: 1px solid #0e0800;
+  margin: 1rem auto;
+  padding: 1rem;
+}
+
+.user-list ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
 html,
 body {
   width: 100%;
