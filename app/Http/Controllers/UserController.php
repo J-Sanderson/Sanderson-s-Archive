@@ -44,6 +44,10 @@ class UserController extends Controller
         $user = User::findOrFail($id);
 
         if ($user['id'] === Auth::id()) {
+            $images = $user->images;
+            foreach($images as $image) {
+                $image->delete();
+            }
             $user->delete();
             return redirect(route('users.index'));
         } else {
