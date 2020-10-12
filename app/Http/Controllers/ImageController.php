@@ -120,6 +120,7 @@ class ImageController extends Controller
         $image = Image::findOrFail($id);
 
         if ($image['user_id'] === Auth::id()) {
+            Storage::delete('public/'.$image->url);
             $image->delete();
             return redirect(route('users.show', Auth::id()));
         } else {
