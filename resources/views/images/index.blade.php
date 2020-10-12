@@ -19,7 +19,7 @@
                             {{ $image->user->name }}
                         </a>
                     </p>
-                    <p>{{ $image->desc }}</p>
+                    <p>{!! nl2br(e($image->desc)) !!}</p>
                     @if(!Auth::guest() && $image->user->id == Auth::user()->id)
                         <a class="edit" href="{{ route('images.edit', $image->id) }}">Edit</a>
                     @endif

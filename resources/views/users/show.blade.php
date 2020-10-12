@@ -7,7 +7,7 @@
             <p><a href="mailto:{{ $user->email }}">{{ $user->email }}</a></p>
         @endif
         @if($user->bio)
-            <p>{{$user->bio}}</p>
+            <p>{!! nl2br(e($user->bio)) !!}</p>
         @endif
     </div>
     <div class="image-list">
@@ -19,7 +19,7 @@
                     </a>
                 </div>
                 <div class="description">
-                    <p>{{ $image->desc }}</p>
+                    <p>{!! nl2br(e($image->desc)) !!}</p>
                     @if(!Auth::guest() && $user->id == Auth::user()->id)
                         <a class="edit" href="{{ route('images.edit', $image->id) }}">Edit</a>
                     @endif
