@@ -23,7 +23,7 @@ class UserController extends Controller
 
         $user = User::findOrFail($id);
 
-        $images = $user->images()->latest()->get();
+        $images = $user->images()->latest()->paginate(15);
 
         return view('users.show', [
             'user' => $user,
