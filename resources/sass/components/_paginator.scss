@@ -1,0 +1,12 @@
+.paginator {
+    max-width: 30rem;
+    text-align: center;
+    background-color: $descblock;
+    border: 1px solid $text;
+    margin: 1rem auto;
+    padding: 1rem;
+    svg {
+        width: 1rem;
+        height: 1rem;
+    }
+}

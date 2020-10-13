@@ -27,4 +27,7 @@
             </div>
         @endforeach
     </div>
+    <div class="paginator">
+        {{ $images->links() }}
+    </div>
 @endsection
