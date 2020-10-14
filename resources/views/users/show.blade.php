@@ -6,6 +6,9 @@
         @if($user->showEmail)
             <p><a href="mailto:{{ $user->email }}">{{ $user->email }}</a></p>
         @endif
+        @if($user->website)
+            <p><a href="{{ $user->website }}">{{ $user->website }}</a></p>
+        @endif
         @if($user->bio)
             <p>{!! nl2br(e($user->bio)) !!}</p>
         @endif

@@ -32,7 +32,7 @@
                             >
                         </label>
                         <label for="website">Your website (optional)</label>
-                        <input type="text" name="website">
+                        <input type="text" name="website" value="{{ Auth::user()->website }}">
                         <label for="bio">Your bio (optional)</label>
                         <textarea id="bio" name="bio">{{ Auth::user()->bio }}</textarea>
                         <button type="submit">Update</button>
