@@ -36,6 +36,7 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $user->showEmail = $request->showEmail === 'on';
         $user->bio = $request->bio;
+        $user->website = $request->website;
         $user->save();
         return redirect(route('users.show', Auth::id()));
     }
