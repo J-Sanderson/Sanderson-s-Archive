@@ -31,6 +31,6 @@ Route::get('/images/edit/{id}', [ImageController::class, 'edit'])->name('images.
 Route::put('/images/edit/{id}', [ImageController::class, 'update'])->name('images.update')->middleware('auth');
 Route::delete('/images/{id}', [ImageController::class, 'destroy'])->name('images.destroy')->middleware('auth');
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
