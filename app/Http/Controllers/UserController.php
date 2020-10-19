@@ -12,7 +12,7 @@ class UserController extends Controller
 {
     public function index() {
 
-        $users = User::orderBy('name', 'asc')->get();
+        $users = User::orderBy('name', 'asc')->where('email_verified_at', '<>', null)->get();
 
         return view('users.index', [
             'users' => $users
