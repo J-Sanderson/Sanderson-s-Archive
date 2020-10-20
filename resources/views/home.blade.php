@@ -19,7 +19,7 @@
                         <a href="{{ route('users.show', Auth::user()->id) }}">Your gallery</a>
                     </p>
 
-                    <h2>Settings</h2>
+                    <h3>Settings</h3>
 
                     <form method="POST" action="{{ route('users.update', Auth::user()->id )}}" class="form">
                         @csrf
@@ -38,12 +38,18 @@
                         <button type="submit">Update</button>
                     </form>
 
-                    <!-- TODO add 'are you sure' confirmation -->
-                    <h2>Delete your account</h2>
+                    <h3>Delete your account</h3>
+                    <p>CAUTION! This button will delete your account and all your images. Proceed with care!</p>
                     <form method="POST" action="{{ route('users.destroy', Auth::user()->id )}}" class="form">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="delete">Delete</button>
+                        <button 
+                            type="submit" 
+                            class="delete"
+                            onClick="return confirm('Are you sure? Your account and images will be PERMANENTLY deleted!')"
+                        >
+                            Delete
+                        </button>
                     </form>
                 </div>
             </div>
