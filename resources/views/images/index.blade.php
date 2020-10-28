@@ -28,7 +28,9 @@
             </div>
         @endforeach
     </div>
-    <div class="paginator">
-        {{ $images->links() }}
-    </div>
+    @if($images->hasPages())
+        <div class="paginator">
+            {{ $images->links() }}
+        </div>
+    @endif
 @endsection
