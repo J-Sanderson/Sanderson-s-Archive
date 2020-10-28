@@ -15,6 +15,12 @@
     <form method="post", action="{{ route('images.destroy', $image->id) }}">
         @csrf
         @method('DELETE')
-        <button type="submit" class="delete">Delete</button>
+        <button 
+            type="submit" 
+            class="delete"
+            onClick="return confirm('Are you sure? This will permanently delete this image.')"
+        >
+            Delete
+        </button>
     </form>
 @endsection
