@@ -22,6 +22,7 @@
                     </a>
                 </div>
                 <div class="description">
+                    <p>{{ $image->created_at }}</p>
                     <p>{!! nl2br(e($image->desc)) !!}</p>
                     @if(!Auth::guest() && $user->id == Auth::user()->id)
                         <a class="edit" href="{{ route('images.edit', $image->id) }}">Edit</a>

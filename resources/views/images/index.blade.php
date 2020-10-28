@@ -18,6 +18,7 @@
                         <a href="{{ route('users.show', $image->user->id) }}">
                             {{ $image->user->name }}
                         </a>
+                        ~ {{ $image->created_at }}
                     </p>
                     <p>{!! nl2br(e($image->desc)) !!}</p>
                     @if(!Auth::guest() && $image->user->id == Auth::user()->id)
