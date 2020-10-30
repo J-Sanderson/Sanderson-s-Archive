@@ -1,7 +1,10 @@
 @extends('layouts.layout')
 
 @section('content')
-    <h2>Upload an image</h2>
+    <div class="intro">
+        <h2>Upload an image</h2>
+    </div>
+
     <form enctype="multipart/form-data" action="{{ route('images.store') }}" method="post" class="form">
         @csrf
         <label for="image">

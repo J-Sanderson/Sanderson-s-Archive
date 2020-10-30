@@ -15,7 +15,7 @@
         </label>
         <button type="submit" class="button">Edit</button>
     </form>
-    <form method="post", action="{{ route('images.destroy', $image->id) }}">
+    <form method="post", action="{{ route('images.destroy', $image->id) }}" class="form transparent">
         @csrf
         @method('DELETE')
         <h3>Delete this image</h3>
