@@ -38,11 +38,11 @@
         <button type="submit" class="button">Update</button>
     </form>
 
-    <h3>Delete your account</h3>
-    <p>CAUTION! This button will delete your account and all your images. Proceed with care!</p>
-    <form method="POST" action="{{ route('users.destroy', Auth::user()->id )}}">
+    <form method="POST" action="{{ route('users.destroy', Auth::user()->id )}}" class="form transparent">
         @csrf
         @method('DELETE')
+        <h3>Delete your account</h3>
+        <p>CAUTION! This button will delete your account and all your images. Proceed with care!</p>
         <button 
             type="submit" 
             class="button danger"

@@ -2,6 +2,12 @@
     border: 1px solid $text;
     background-color: $descblock;
     padding: 0 1rem;
+
+    &.transparent {
+        border: 0;
+        background: transparent;
+    }
+    
     > * {
         display: block;
         margin: 1rem 0;

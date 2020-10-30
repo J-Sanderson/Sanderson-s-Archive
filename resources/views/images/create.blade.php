@@ -7,6 +7,7 @@
 
     <form enctype="multipart/form-data" action="{{ route('images.store') }}" method="post" class="form">
         @csrf
+        <!-- TODO style the upload -->
         <label for="image">
             <span>Select file</span>
             <input id="file" type="file" name="image" accept="image/*" required>

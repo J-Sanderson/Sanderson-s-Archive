@@ -46,6 +46,11 @@ footer {
   padding: 0 1rem;
 }
 
+.form.transparent {
+  border: 0;
+  background: transparent;
+}
+
 .form > * {
   display: block;
   margin: 1rem 0;
