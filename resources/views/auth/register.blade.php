@@ -44,7 +44,7 @@
             <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
         </label>
 
-        <button type="submit">
+        <button type="submit" class="button">
             {{ __('Register') }}
         </button>
 </form>

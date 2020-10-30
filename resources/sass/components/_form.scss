@@ -10,3 +10,14 @@
         display: block;
     }
 }
+
+.button {
+    border: 0;
+    background: $header-footer;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+
+    &.danger {
+        background: $danger;
+    }
+}

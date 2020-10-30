@@ -13,7 +13,7 @@
             <span>Description</span>
             <textarea id="desc" name="desc">{{ $image->desc }}</textarea>
         </label>
-        <button type="submit">Edit</button>
+        <button type="submit" class="button">Edit</button>
     </form>
     <form method="post", action="{{ route('images.destroy', $image->id) }}">
         @csrf
@@ -22,7 +22,7 @@
         <p>CAUTION! This button will permanently delete this image. You will need to reupload it if you change your mind.</p>
         <button 
             type="submit" 
-            class="delete"
+            class="button danger"
             onClick="return confirm('Are you sure? This will permanently delete this image.')"
         >
             Delete

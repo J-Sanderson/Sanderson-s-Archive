@@ -12,7 +12,7 @@
             <span>Description (optional):</span>
             <textarea id="desc" name="desc"></textarea>
         </label>
-        <button type="submit">
+        <button type="submit" class="button">
             Upload
         </button>
     </form>

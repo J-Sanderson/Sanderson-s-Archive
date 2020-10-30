@@ -1,7 +1,9 @@
 @extends('layouts.layout')
 
 @section('content')
-<h2>{{ __('Verify Your Email Address') }}</h2>
+<div class="intro">
+    <h2>{{ __('Verify Your Email Address') }}</h2>
+</div>
 
 @if (session('resent'))
     <div role="alert">
@@ -9,10 +11,12 @@
     </div>
 @endif
 
-{{ __('Before proceeding, please check your email for a verification link.') }}
-{{ __('If you did not receive the email') }},
 <form class="form" method="POST" action="{{ route('verification.resend') }}">
     @csrf
-    <button type="submit">{{ __('click here to request another') }}</button>.
+    <p>
+        {{ __('Before proceeding, please check your email for a verification link.') }}
+        {{ __('If you did not receive the email') }},
+    </p>
+    <button type="submit" class="button">{{ __('click here to request another') }}</button>
 </form>
 @endsection

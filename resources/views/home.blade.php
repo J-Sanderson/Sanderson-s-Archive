@@ -35,7 +35,7 @@
             <span>Your bio (optional):</span>
             <textarea id="bio" name="bio">{{ Auth::user()->bio }}</textarea>
         </label>
-        <button type="submit">Update</button>
+        <button type="submit" class="button">Update</button>
     </form>
 
     <h3>Delete your account</h3>
@@ -45,7 +45,7 @@
         @method('DELETE')
         <button 
             type="submit" 
-            class="delete"
+            class="button danger"
             onClick="return confirm('Are you sure? Your account and images will be PERMANENTLY deleted!')"
         >
             Delete

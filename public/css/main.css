@@ -55,6 +55,17 @@ footer {
   display: block;
 }
 
+.button {
+  border: 0;
+  background: #bea36c;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.button.danger {
+  background: #e77474;
+}
+
 .intro {
   text-align: center;
   background-color: #fcf9f1;
