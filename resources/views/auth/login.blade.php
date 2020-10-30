@@ -1,16 +1,18 @@
 @extends('layouts.layout')
 
 @section('content')
-<h2>{{ __('Login') }}</h2>
+<div class="intro">
+    <h2>{{ __('Login') }}</h2>
+</div>
+
 <form method="POST" action="{{ route('login') }}" class="form">
     @csrf
     <label for="email">
         <span>{{ __('E-Mail Address') }}</span>
         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
     </label>
-
     @error('email')
-        <span role="alert">
+        <span role="alert" class="error">
             <strong>{{ $message }}</strong>
         </span>
     @enderror
@@ -21,7 +23,7 @@
     </label>
 
     @error('password')
-        <span role="alert">
+        <span role="alert" class="error">
             <strong>{{ $message }}</strong>
         </span>
     @enderror
@@ -31,7 +33,7 @@
         {{ __('Remember Me') }}
     </label>
 
-    <button type="submit">
+    <button type="submit" class="button">
         {{ __('Login') }}
     </button>
 

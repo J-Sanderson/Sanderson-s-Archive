@@ -1,7 +1,9 @@
 @extends('layouts.layout')
 
 @section('content')
-<h2>{{ __('Register') }}</h2>
+<div class="intro">
+    <h2>{{ __('Register') }}</h2>
+</div>
 <form method="POST" action="{{ route('register') }}" class="form">
     @csrf
         <label for="name" >
@@ -10,7 +12,7 @@
         </label>
 
         @error('name')
-            <span role="alert">
+            <span role="alert" class="error">
                 <strong>{{ $message }}</strong>
             </span>
         @enderror
@@ -21,7 +23,7 @@
         </label>
 
         @error('email')
-            <span role="alert">
+            <span role="alert" class="error">
                 <strong>{{ $message }}</strong>
             </span>
         @enderror
@@ -32,7 +34,7 @@
         </label>
 
         @error('password')
-            <span role="alert">
+            <span role="alert" class="error">
                 <strong>{{ $message }}</strong>
             </span>
         @enderror
@@ -42,7 +44,7 @@
             <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
         </label>
 
-        <button type="submit">
+        <button type="submit" class="button">
             {{ __('Register') }}
         </button>
 </form>

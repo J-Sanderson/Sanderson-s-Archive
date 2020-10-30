@@ -40,6 +40,17 @@ footer {
   padding: 1rem;
 }
 
+.form {
+  border: 1px solid #0e0800;
+  background-color: #fcf9f1;
+  padding: 0 1rem;
+}
+
+.form.transparent {
+  border: 0;
+  background: transparent;
+}
+
 .form > * {
   display: block;
   margin: 1rem 0;
@@ -47,6 +58,21 @@ footer {
 
 .form label span {
   display: block;
+}
+
+.form .error {
+  color: #a51d1d;
+}
+
+.button {
+  border: 0;
+  background: #bea36c;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.button.danger {
+  background: #e77474;
 }
 
 .intro {
