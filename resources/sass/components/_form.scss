@@ -1,4 +1,7 @@
 .form {
+    border: 1px solid $text;
+    background-color: $descblock;
+    padding: 0 1rem;
     > * {
         display: block;
         margin: 1rem 0;

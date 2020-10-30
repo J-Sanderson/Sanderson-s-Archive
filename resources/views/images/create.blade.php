@@ -8,8 +8,10 @@
             <span>Select file</span>
             <input id="file" type="file" name="image" accept="image/*" required>
         </label>
-        <label for="desc">Description (optional)</labeL>
-        <textarea id="desc" name="desc"></textarea>
+        <label for="desc">
+            <span>Description (optional):</span>
+            <textarea id="desc" name="desc"></textarea>
+        </label>
         <button type="submit">
             Upload
         </button>

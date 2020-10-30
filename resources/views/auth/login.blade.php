@@ -1,7 +1,9 @@
 @extends('layouts.layout')
 
 @section('content')
-<h2>{{ __('Login') }}</h2>
+<div class="intro">
+    <h2>{{ __('Login') }}</h2>
+</div>
 <form method="POST" action="{{ route('login') }}" class="form">
     @csrf
     <label for="email">

@@ -40,6 +40,12 @@ footer {
   padding: 1rem;
 }
 
+.form {
+  border: 1px solid #0e0800;
+  background-color: #fcf9f1;
+  padding: 0 1rem;
+}
+
 .form > * {
   display: block;
   margin: 1rem 0;
