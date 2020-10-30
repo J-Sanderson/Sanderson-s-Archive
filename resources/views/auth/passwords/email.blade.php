@@ -1,7 +1,9 @@
 @extends('layouts.layout')
 
 @section('content')
-<h2>{{ __('Reset Password') }}</h2>
+<div class="intro">
+    <h2>{{ __('Reset Password') }}</h2>
+</div>
 
 @if (session('status'))
     <div role="alert">
@@ -13,7 +15,7 @@
     @csrf
 
     <label for="email">
-        {{ __('E-Mail Address') }}
+        <span>{{ __('E-Mail Address') }}</span>
         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
     </label>
 
@@ -23,7 +25,7 @@
         </span>
     @enderror
 
-    <button type="submit">
+    <button type="submit" class="button">
         {{ __('Send Password Reset Link') }}
     </button>
 </form>
