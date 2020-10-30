@@ -55,6 +55,10 @@ footer {
   display: block;
 }
 
+.form .error {
+  color: #a51d1d;
+}
+
 .button {
   border: 0;
   background: #bea36c;

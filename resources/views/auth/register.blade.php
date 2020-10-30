@@ -12,7 +12,7 @@
         </label>
 
         @error('name')
-            <span role="alert">
+            <span role="alert" class="error">
                 <strong>{{ $message }}</strong>
             </span>
         @enderror
@@ -23,7 +23,7 @@
         </label>
 
         @error('email')
-            <span role="alert">
+            <span role="alert" class="error">
                 <strong>{{ $message }}</strong>
             </span>
         @enderror
@@ -34,7 +34,7 @@
         </label>
 
         @error('password')
-            <span role="alert">
+            <span role="alert" class="error">
                 <strong>{{ $message }}</strong>
             </span>
         @enderror

@@ -20,7 +20,7 @@
     </label>
 
     @error('email')
-        <span role="alert">
+        <span role="alert" class="error">
             <strong>{{ $message }}</strong>
         </span>
     @enderror

@@ -16,7 +16,7 @@
     </label>
 
     @error('email')
-        <span role="alert">
+        <span role="alert" class="error">
             <strong>{{ $message }}</strong>
         </span>
     @enderror
@@ -26,7 +26,7 @@
     <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
     @error('password')
-        <span role="alert">
+        <span class="error">
             <strong>{{ $message }}</strong>
         </span>
     @enderror
